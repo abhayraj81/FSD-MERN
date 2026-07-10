@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            border: 1px solid navy;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+        /*input:focus{
+            background-color: yellow;
+            color: blue;
+            font-family: jokerman;
+            box-shadow: 1px 1px 5px 3px red;
+            outline: none;
+        }*/
+        input:user-valid{
+            border: 2px solid green;
+        }
+        input:user-invalid{
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <input type="text" placeholder="Enter User Name " id="unm" required minlength="4"><br>
+        <input type="email" placeholder="Mail:demo@mail.abc" id="mail" required minlength="6"><br>
+        <input type="password" placeholder="password:Hp@123" id="pwd" required minlength="6"><br>
+        <input type="submit" id="subBtn"/>
+
+    </form>
+    
+</body>
+</html>
