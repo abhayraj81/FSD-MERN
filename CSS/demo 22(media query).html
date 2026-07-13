@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Media Query Ranges</title>
     <style>
-        @media all and (orientation: landscape) {
+        /* @media all and (orientation: landscape) {
             body{
                 background-color: rebeccapurple;
             }
@@ -14,10 +14,42 @@
             body{
                 background-color: yellow;
             }
+        } */
+        h1{
+            display: none;
+        }
+        @media all and (min-width: 768px){
+            body{
+                background-color: aqua;
+            }
+            #h1{
+                display: block;
+                color: rgb(0, 0, 0);
+            }
+        }
+        @media all and (min-width: 576px) and (max-width: 767px){
+            body{
+                background-color: yellow;
+            }
+            #h2{
+                display: block;
+                color: palevioletred;
+            } 
+        }
+        @media all and (max-width: 575px){
+            body{
+                background-color: red;
+            }
+            #h3{
+                display: block;
+                color: ghostwhite;
+            }
         }
     </style>
 </head>
 <body>
-    
+    <h1 id="h1"> 1 Large Device </h1>
+    <h1 id="h2"> 2 Medium Device </h1>
+    <h1 id="h3"> 3 Small Device </h1>
 </body>
 </html>
