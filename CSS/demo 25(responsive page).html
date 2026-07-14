@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .container>*{
+            border: 1px solid navy;
+            text-align: center;
+            font-size: x-large;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 100%;
+        }
+        .myHead{
+            line-height: 120px;
+            background-color: navy;
+            color: aliceblue;
+        }
+        .asideL,.asideR{
+            line-height: 100px;
+            background-color: yellow;
+        }
+        .main{
+            line-height: 120px;
+            background-color: violet;
+            height: 400px;
+        }
+        .myFooter{
+            line-height: 100px;
+            background-color: black;
+            color: white00;
+        }   
+        @media all and (min-width:992px){
+            .myHead{
+                order: 1;
+            }
+            .asideL{
+                order: 2;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 0%;
+            }
+            .asideR{
+                order: 4;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 0%;
+            }
+            .main{
+                order: 3;
+                flex-grow: 3;
+                flex-shrink: 3;
+                flex-shrink: 3;
+                flex-basis: 0%;
+            }
+            .myFooter{
+                order: 5;
+            }
+        }
+             @media all and (min-width: 768px) and (max-width: 991px){
+            .myHead{
+                order: 1;
+            }
+            .asideL{
+                order: 3;
+                flex-basis: 0%;
+                
+            }
+            .asideR{
+                order: 4;
+                flex-basis: 0%;               
+            }
+            .main{
+                order: 2;
+                flex-basis: 0%;                
+            }
+            .myFooter{
+                order: 5;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="myHead"> My Header </header>
+        <aside class="asideL"> Aside Left</aside>
+        <aside class="asideR"> Aside Right</aside>
+        <main class="main"> Main Content</main>
+        <footer class="myFooter"> My Footer </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .inputGroup{
+            position: relative;
+        }
+        .inputGroup>label{
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            font-size: 10px;
+            color: lightgray;
+            transition: 0.3s;
+        }
+        .inputGroup > input[type="text"]{
+            outline: none;
+        }
+        .inputGroup > input[type="text"]:focus{
+            outline: 1px solid blue;
+            border: 0;
+        }
+        .inputGroup > input[type="text"]:focus + label{
+            top:-4px;
+            color: black;
+            background-color: white;
+            font-size: 7px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="inputGroup">
+        <input type="text" id="unm">
+        <label for="unm">Enter Name</label>
+    </div>
+    
+</body>
+</html>
