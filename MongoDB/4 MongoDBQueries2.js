@@ -113,20 +113,21 @@ db.DateCollection.find({},
     {
         $dateToString:
         {
-            date:"$insertedAt"
+            date:"$insertedAt",
             format:"%d-%B-%Y"
         }
     }
 })
 
-db.DateCollection.find({},
+//Field Alias: RecordInsertedAt
+db.DateCollection.find({insertedAt:{$type:'date'}},
    {
     RecordInsertedAt:
     {
         $dateToString:
         {
             date:"$insertedAt",
-            format:"%d-%B-%Y",
+            format:"%d-%B-%Y %H:%M:%S",
             timezone:"Asia/Mumbai"
         }
     }
