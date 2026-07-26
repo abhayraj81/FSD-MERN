@@ -73,7 +73,7 @@
 
 
 
-//syntax :  db.collection.aggreagate([{$match},{$group},{$sort}])
+//syntax :  db.collection.aggre gate([{$match},{$group},{$sort}])
 
 db.Users.aggregate(
     [
