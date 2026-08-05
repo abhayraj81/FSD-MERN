@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">DOM Demo Page 4</h1>
+    <p id="myP">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores eos, dolores ratione rerum culpa maxime molestias est quaerat id! Iure dolores animi vel obcaecati vero iusto sapiente, nisi quas!</p>
+    <button onclick="myfun()">Button</button>
+    <script>
+        function myfun()
+        {
+          let para = document.getElementById("myP")
+          para.style.backgroundColor='navy'
+          para.style.color='white'
+          para.style.textAlign='center'
+          para.style.padding='20px'
+          para.style.boxShadow='0 4px 8px 3px grey'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cls1
+        {
+            background-color: yellow;
+            color: navy;
+            line-height: 100px;
+        }
+        .cls2
+        {
+            text-align: center;
+            font-family: chiller;
+            font-size: x-large;
+            box-shadow: 0px 4px 8px 3px grey;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">DOM Demo Page 5</h1>
+    <p id="myP">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores eos, dolores ratione rerum culpa maxime molestias est quaerat id! Iure dolores animi vel obcaecati vero iusto sapiente, nisi quas!</p>
+    <button onclick="myfun()">Button</button>
+    <script>
+        function myfun()
+        {
+          let para = document.getElementById("myP")
+          let list = para.classList
+        //   list.add('cls1')
+        //   list.add('cls2')
+        //   let r=list.contains('cls1')
+        // console.log(r);
+        // if(list.contains('cls1'))
+        //    list.remove('cls1')
+        list.toggle('cls2')
+        Sconsole.log(list);
+        //   para.style.backgroundColor='navy'
+        //   para.style.color='white'
+        //   para.style.textAlign='center'
+        //   para.style.padding='20px'
+        //   para.style.boxShadow='0 4px 8px 3px grey'
+          
+        }
+    </script>
+</body>
+</html>

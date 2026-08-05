@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align ="center">DOM Demo Page 10 (Query Selector)</h1>
+    <p class="clsA">Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p id="myP">Paragraph 3</p>
+    <h2>Heading 2</h2>
+    <span class="clsA">Span</span>
+
+    <div>
+        <h1>Heading 1</h1>
+        <h1>Heading 2</h1>
+        <h1>Heading 3</h1>
+        <h1>Heading 4</h1>
+        <h1>Heading 5</h1>
+    </div>
+
+    <button onclick="myfun()">Button</button>
+
+    <script>
+        function myfun(){
+            // let ele1 = document.querySelector("p");
+            // let ele2 = document.querySelectorAll("p");
+            // let ele3 = document.querySelector("#mP");
+            // let ele4 = document.querySelector(".clsA");
+            // console.log(ele1);
+            // console.log(ele2);
+            // console.log(ele3);
+            // console.log(ele3);
+            let ele5 = document.querySelectorAll("div>h1:nth-child(odd)")
+            console.log(ele5);
+            
+        }
+    </script>
+</body>
+</html>

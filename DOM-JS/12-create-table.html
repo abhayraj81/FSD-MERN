@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align ="center">DOM Demo Page 12 (creating table dynamically)</h1>
+    
+    <button onclick="myfun()">Create Table</button>
+    
+
+    <script>
+        function myfun(){
+            let table = document.createElement("table");
+            table.setAttribute("border","5px")
+            table.setAttribute("align","center")
+            table.setAttribute("width","400px")
+            let row = table.insertRow();
+
+            for(let i = 1; i<=5 ; i++){
+                let row = table.insertRow();
+                let col1 = row.insertCell();
+                col1.textContent = "Column 1";
+
+                let col2 = row.insertCell();
+                let inp = document.createElement("input");
+                col2.append(inp);
+
+                let col3 = row.insertCell();
+                col3.textContent = "Column 3";
+            // console.log(table);
+            }
+            document.body.append(table)
+            
+
+        }
+    </script>
+</body>
+</html>

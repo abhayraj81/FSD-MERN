@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align ="center">DOM Demo Page 8</h1>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+
+    <button onclick="myfun()">Button</button>
+
+    <script>
+        function myfun(){
+            let paragraph = document.getElementsByTagName("p");
+            for (let para of paragraph){
+                para.style.background = "navy";
+                para.style.lineHeight = "25px";
+                para.style.color = "white";
+                para.style.textAlign = "center";
+                para.style.fontSize = "large";
+            }
+        }
+    </script>
+</body>
+</html>

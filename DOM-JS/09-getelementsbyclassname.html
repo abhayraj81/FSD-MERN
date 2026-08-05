@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align ="center">DOM Demo Page 9</h1>
+    <p class="clsA">Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <h2>Heading 2</h2>
+    <span class="clsA">Span</span>
+
+    <button onclick="myfun()">Button</button>
+
+    <script>
+        function myfun(){
+            let elements = document.getElementsByClassName("clsA");
+            for (let ele of elements){
+                ele.style.background = "navy";
+                ele.style.lineHeight = "50px";
+                ele.style.color = "white";
+                ele.style.textAlign = "center";
+                ele.style.fontSize = "xx-large";
+            }
+        }
+    </script>
+</body>
+</html>

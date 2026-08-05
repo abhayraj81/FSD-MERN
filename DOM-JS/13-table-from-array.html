@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align ="center">DOM Demo Page 13 (table implementation)</h1>
+    
+    <button onclick="myfun()">Create Table</button>
+    
+
+    <script>
+        const productDetails = [
+            {proID: 1012 , proName: "iMac" ,    proPrice: 899,  proQty:5},
+            {proID: 1112 , proName: "Macbook" , proPrice: 1199, proQty:2},
+            {proID: 3012 , proName: "iPad" ,    proPrice: 699,  proQty:10},
+            {proID: 2012 , proName: "Earpods" , proPrice: 599,  proQty:25},
+            {proID: 1412 , proName: "Charger" , proPrice: 199,  proQty:50},
+        ];
+        function myfun(){
+            let table = document.createElement("table");
+
+            let thead = table.createTHead();
+            let hrow = thead.insertRow();
+            // let hcol = table.insertRow();
+
+            for(let key in productDetails[0]){
+                let hcol = hrow.insertCell();
+                hcol.textContent = key;
+                hcol.style.textAlign = "center";
+                hcol.style.fontWeight = "Bold";
+            }
+            table.setAttribute("border","5px");
+            table.setAttribute("align","center");
+            table.setAttribute("width","400px");
+            
+            productDetails.forEach((product)=>{
+                let row = table.insertRow();
+
+                for(let key in product){
+                let col = row.insertCell();
+                col.textContent = product[key];
+            }            
+            });            
+            
+            document.body.append(table)
+            
+
+        }
+    </script>
+</body>
+</html>
