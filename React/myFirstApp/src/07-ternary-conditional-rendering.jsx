@@ -28,7 +28,7 @@ function Comp7(){
         boxShadow:"0 5px 8px grey"
     }
 
-    let isLoggedIn = false  
+    let isLoggedIn = true  
     
     return(
         <>  
