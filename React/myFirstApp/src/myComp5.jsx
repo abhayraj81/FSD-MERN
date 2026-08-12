@@ -24,6 +24,9 @@ function Comp5(){
             <button onClick={myfun} className="btn btn-warning">
                 Click Me !
             </button>
+
+            {/* parameterized function calling with event haldling */}
+
             <button onClick={()=>{myfun2("Abhay Raj")}} className="btn btn-warning">
                 Tell me Name 
             </button>

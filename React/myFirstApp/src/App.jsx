@@ -7,6 +7,10 @@ import Comp3 from './myComp3'
 import Comp2 from './myComp2'
 import Comp4 from './myComp4'
 import Comp5 from './myComp5'
+import Comp6 from './myComp6'
+import Comp7 from './myComp7'
+import Comp8 from './myComp8'
+import Comp9 from './myComp9'
 //import './App.css'
 
 function App() {
@@ -14,7 +18,7 @@ function App() {
 
   return (
     <>    
-    <Comp5/>
+    <Comp9/>
       {/* <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
