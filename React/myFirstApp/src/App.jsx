@@ -5,16 +5,16 @@ import heroImg from './assets/hero.png'
 import Comp1 from './myComp1'
 import Comp3 from './myComp3'
 import Comp2 from './myComp2'
+import Comp4 from './myComp4'
+import Comp5 from './myComp5'
 //import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-    <Comp1/>    
-    <Comp2/>
-    <Comp3/>
+    <>    
+    <Comp5/>
       {/* <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
