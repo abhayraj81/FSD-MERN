@@ -17,13 +17,14 @@ import Comp12 from './myComp12'
 import Comp13 from './myComp13'
 import ShowDetails from './myComp13'
 import Comp14 from './myComp14'
+import Comp15 from './myComp15-stateManagement'
 //import './App.css'
 
 function App() {  const [count, setCount] = useState(0)
 
   return (
     <>      
-    <Comp14/>
+    <Comp15/>
     
       {/* <section id="center">
         <div className="hero">

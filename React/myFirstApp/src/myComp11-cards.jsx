@@ -5,6 +5,7 @@ function Mycard( {product} )
     return(<>
         <div className="card">
             <div className="card-header">{product.proName}</div>
+            <img src ={"./shiba-inu-1.jpg"} />
             <div className="card-body">
                 <p className="alert alert-warning">
                     Product Id : {product.proID} <br/>
@@ -12,6 +13,7 @@ function Mycard( {product} )
                     Product Quantity : {product.proQty} <br/>
                 </p>
             </div>
+            
             <div className="card-footer">
                 <Link to={`/details/${product.proID}`} className="btn btn-info btn-block">
                     View Details
