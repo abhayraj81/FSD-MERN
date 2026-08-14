@@ -11,14 +11,20 @@ import Comp6 from './myComp06-conditional-rendering-dashboard'
 import Comp7 from './myComp07-ternary-conditional-rendering'
 import Comp8 from './myComp08-array-map-rendering'
 import Comp9 from './myComp09-dynamic-table-rendering'
+import Comp10 from './myComp10-parent-child'
+import Comp11 from './myComp11-cards'
+import Comp12 from './myComp12'
+import Comp13 from './myComp13'
+import ShowDetails from './myComp13'
+import Comp14 from './myComp14'
 //import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App() {  const [count, setCount] = useState(0)
 
   return (
-    <>    
-    <Comp9/>
+    <>      
+    <Comp14/>
+    
       {/* <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
