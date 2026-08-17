@@ -16,7 +16,7 @@ function Comp15(){
 
     function btnClick(){
         // count =  + 1
-        // console.log(count);
+        // console.log(count)
         setCount(count + 1);
     }
 
