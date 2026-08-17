@@ -12,10 +12,11 @@ function Comp16(){
     };
 
     const [productsData, setProductData] = useState([])
-
+    const [isLoading, setIsLoading] = useState(false);
 
     function loadProducts()
-    {
+    {   
+        setIsLoading(true);
         setTimeout(()=>
         {
             setProductData([
@@ -25,6 +26,7 @@ function Comp16(){
                 {proID: 2012 , proName: "Earpods" , proPrice: 599,  proQty:25},
                 {proID: 1412 , proName: "Charger" , proPrice: 199,  proQty:50},
             ])
+            setIsLoading(false);
         },3000)
     }
 
@@ -32,12 +34,19 @@ function Comp16(){
         <>  
 
             <h1 style={myCss} align="center"> Component 16 </h1>            
-            <button onClick={loadProducts}> Click Me !</button> <br/>
+            <button onClick={loadProducts} disabled = {isLoading}> 
+            {
+            isLoading ? "Loading..." : "Load Product"
+            }            
+            {isLoading && <span className="spinner-border spinner-border-sm"> </span>}
+            </button> <br/>
+            
+
             <div className="container">
                 {productsData.length > 0 && (
-                    <table className="table table-bordered">
+                    <table className="table table-bordered ">
                         <thead>
-                            <tr>
+                            <tr className="table thead-dark">
                                 <th>Product Id</th>
                                 <th>Product Name</th>
                                 <th>Product Price</th>
@@ -46,7 +55,7 @@ function Comp16(){
                         </thead>
                         <tbody>
                             {productsData.map((product) => (
-                                <tr>
+                                <tr className="table table-warning">
                                     <td>{product.proID}</td>
                                     <td>{product.proName}</td>
                                     <td>{product.proPrice}</td>
