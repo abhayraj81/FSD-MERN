@@ -20,13 +20,17 @@ import Comp14 from './myComp14'
 import Comp15 from './myComp15-stateManagement'
 import Comp16 from './myComp16-event listener'
 import Comp17 from './myComp17-form-halder'
+import Comp18 from './myComp18-useEffect'
+import Comp19 from './myComp19-props-drilling'
+import Comp20 from './myComp20-context'
 //import './App.css'
 
 function App() {  const [count, setCount] = useState(0)
 
   return (
-    <>      
-    <Comp16/>
+    <>
+    <Comp1/>      
+    
     
       {/* <section id="center">
         <div className="hero">
