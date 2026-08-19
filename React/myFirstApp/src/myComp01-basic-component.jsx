@@ -3,12 +3,12 @@ import { GlobalContext } from "./Context/AppContexts"
 
 function Comp1(){
 
-    const r = useContext(GlobalContext)
+    const {userName, setUserName} = useContext(GlobalContext)
 
     return(
     <>
-        <h1 align="center">Component 1</h1>
-        <h4 align="center"> {r.userName} {r.userAge} </h4>
+        <h1 align="center">Component 1 {userName} </h1>
+        <button onClick={()=> setUserName("Anmol")}> Update Name </button>
     </>
     
     )
