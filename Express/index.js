@@ -1,9 +1,15 @@
+require("dotenv").config();
 const express = require('express')
-
 const app = express()
 
-const HOST = 'localhost'
-const PORT = 8000
+const HOST = process.env.HOST;
+const PORT = process.env.PORT || 8000;
+
+const adminRoutes = require('./routes/adminRoutes');
+app.use("/admin", adminRoutes)
+
+const userRoutes = require('./routes/userRoutes');
+app.use("/user", userRoutes)
 
 // http://localhost:8000
 app.get("/",(req, res)=>{
@@ -12,7 +18,6 @@ app.get("/",(req, res)=>{
 app.get("/home",(req, res)=>{
     res.send("Welcome to Home")
 })
-
 
 app.post("/",(req,res)=>{
     res.send("Response from the post")
