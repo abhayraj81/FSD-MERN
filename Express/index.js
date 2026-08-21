@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require('express')
+const db = require("./db_conn");
 const app = express()
 
 const HOST = process.env.HOST;
