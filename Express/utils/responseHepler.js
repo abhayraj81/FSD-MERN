@@ -17,7 +17,7 @@ const sendSuccess = (
 
 const sendError = (
   res,
-  statusCode = STATUS_CODES.COMMON.INTERNAL_ERROR,
+  statusCode = STATUS_CODES.INTERNAL_SERVER_ERROR,
   message = MESSAGES.COMMON.ERROR,
   error = null,
 ) => {

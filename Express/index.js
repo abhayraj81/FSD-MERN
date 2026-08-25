@@ -65,14 +65,7 @@ app.get("/emp",(req, res)=>{
 })
 
 //---Error Handling Middleware------
-const errorHandler = (err,req,res,next)=>{
-    console.log("Error handling Middleware...")
-    res.status(500).json({
-        success:false,
-        message:err.message,
-        err:err.stack,
-    })
-}
+const errorHandler = require("./middlewares/errorMiddleware")
 app.use(errorHandler)
 
 app.listen(PORT, HOST , (error)=>{
