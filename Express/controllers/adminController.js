@@ -19,9 +19,22 @@ const adminGetUser = (req,res)=>{
 };
 
 const UserModel = require("../models/userModel");
+
+const { sendError } = require("../utils/responseHepler");
+const STATUS_CODES = require("../constants/statusCodes");
+const MESSAGES = require("../constants/messages");
+
 const adminAddUser = async (req, res, next)=>{
-    console.log(req.body);
+    // console.log(req.body);
 try{
+    const {unm, pwd, mailId} = req.body;
+    if (!unm || !pwd || !mailId) 
+        return sendError(
+            res,
+            STATUS_CODES.BAD_REQUEST,
+            MEASSAGE.AUTH.MISSING_VALUES,
+        );
+        
     let newUser = new UserModel({
         userName: req.body.unm,
         userPwd: req.body.pwd,
