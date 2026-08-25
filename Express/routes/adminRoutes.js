@@ -1,7 +1,15 @@
 
 const express = require('express')
 const router = express.Router()
-const {adminDefault, adminHome, adminAbout, adminGetUser} = require("../controllers/adminController")
+const {adminDefault, adminHome, adminAbout, adminGetUser, adminAddUser} = require("../controllers/adminController")
+
+//-------------Route Level Middleware------------
+const middleware3 = (req, res, next)=>{
+    console.log("Admin Route Middleware....");
+    next()
+}
+router.use(middleware3)
+
 
 // http://localhost:8081/admin
 router.get("/",(req,res)=>{
@@ -13,6 +21,9 @@ router.get("/home",adminHome);
 
 router.get("/about",adminAbout);
 router.get("/user",adminGetUser);
+
+// http://localhost:8000/admin/add
+router.post("/add", adminAddUser)
 
 
 module.exports = router

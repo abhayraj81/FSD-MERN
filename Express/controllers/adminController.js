@@ -18,4 +18,23 @@ const adminGetUser = (req,res)=>{
     });
 };
 
-module.exports = {adminDefault ,adminHome , adminAbout, adminGetUser}
+const UserModel = require("../models/userModel");
+const adminAddUser = async (req, res, next)=>{
+    console.log(req.body);
+try{
+    let newUser = new UserModel({
+        userName: req.body.unm,
+        userPwd: req.body.pwd,
+        userEmail:req.body.mail
+    });
+    newUser = await newUser.save();
+    // console.log(newUser);
+    res.json(newUser);
+}   
+catch (err){
+    next(err);
+}
+    // res.status(200).json(newUser);
+}
+
+module.exports = {adminDefault ,adminHome , adminAbout, adminGetUser, adminAddUser}
