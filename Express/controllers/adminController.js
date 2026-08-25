@@ -24,10 +24,13 @@ const { sendError, sendSuccess } = require("../utils/responseHepler");
 const STATUS_CODES = require("../constants/statusCodes");
 const MESSAGES = require("../constants/messages");
 
+const bcrypt = require('bcrypt')
+
 const adminAddUser = async (req, res, next)=>{
     // console.log(req.body);
 try{
     const {unm, pwd, mail} = req.body;
+    const hashedPwd = await bcrypt.hash(pwd,10)
     if (!unm || !pwd || !mail) 
         return sendError(
             res,
@@ -37,7 +40,7 @@ try{
 
     let newUser = new UserModel({
         userName: unm,
-        userPwd: pwd,
+        userPwd: hashedPwd,
         userEmail:mail
     });
 
@@ -55,4 +58,18 @@ catch (err){
     // res.status(200).json(newUser);
 }
 
-module.exports = {adminDefault ,adminHome , adminAbout, adminGetUser, adminAddUser}
+const adminShowUsers = async (req, res, next)=>{
+    try{
+        const allUsers = await UserModel.find()
+        return sendSuccess(res,
+                           STATUS_CODES.OK,
+                           MESSAGES.USER.FETCHED_ALL,
+                           allUsers,)
+    }
+    catch(err)
+    {
+        next(err)
+    }
+}
+
+module.exports = {adminDefault ,adminHome , adminAbout, adminGetUser, adminAddUser, adminShowUsers}
