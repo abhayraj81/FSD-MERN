@@ -20,7 +20,7 @@ const adminGetUser = (req,res)=>{
 
 const UserModel = require("../models/userModel");
 
-const { sendError, sendSuccess } = require("../utils/responseHepler");
+const { sendError, sendSuccess } = require("../utils/responseHelper");
 const STATUS_CODES = require("../constants/statusCodes");
 const MESSAGES = require("../constants/messages");
 

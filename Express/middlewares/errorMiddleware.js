@@ -1,5 +1,5 @@
 
-const { sendError } = require("../utils/responseHepler");
+const { sendError } = require("../utils/responseHelper");
 
 const errorHandler = (err,req,res,next)=>{
     return sendError(res, err.statusCode , err.message, err.stack)        
