@@ -26,6 +26,12 @@ const MESSAGES = require("../constants/messages");
 
 const bcrypt = require('bcrypt')
 
+const sanitizeUser = (user)=>{    
+    user = user.toObject ? user.toObject(): {...user}
+    delete user["userPwd"];
+    return user
+}
+
 const adminAddUser = async (req, res, next)=>{
     // console.log(req.body);
 try{
@@ -60,11 +66,16 @@ catch (err){
 
 const adminShowUsers = async (req, res, next)=>{
     try{
+        // const allUsers = await UserModel.find({},{ userPwd : 0 })
+        // const allUsers = await UserModel.find().select("userName userEmail")
+        // const allUsers = await UserModel.find().select("-userPwd")
         const allUsers = await UserModel.find()
+
         return sendSuccess(res,
                            STATUS_CODES.OK,
                            MESSAGES.USER.FETCHED_ALL,
-                           allUsers,)
+                           allUsers.map(sanitizeUser),
+                        )
     }
     catch(err)
     {
@@ -72,4 +83,75 @@ const adminShowUsers = async (req, res, next)=>{
     }
 }
 
-module.exports = {adminDefault ,adminHome , adminAbout, adminGetUser, adminAddUser, adminShowUsers}
+const adminFindUser = async(req,res,next)=>{
+    try{
+        const user = await UserModel.findById(req.params.id)
+        if(!user)
+            return sendError(res, STATUS_CODES.NOT_FOUND, MESSAGES.USER.NOT_FOUND)
+        return sendSuccess(res,
+                           STATUS_CODES.OK,
+                           MESSAGES.USER.FETCHED,
+                           sanatizeUser(user),
+                        );        
+   }catch (err){
+    next(err);
+   }
+};
+
+const adminDeleteUser = async(req,res,next)=>{
+    try{
+        const user = await UserModel.findByIdAndDelete(req.params.id)
+        if(!user)
+            return sendError(res, STATUS_CODES.NOT_FOUND, MESSAGES.USER.NOT_FOUND)
+        return sendSuccess(res,
+                           STATUS_CODES.OK,
+                           MESSAGES.USER.DELETED,
+                           sanitizeUser(user),
+                        );        
+    }catch(err){
+        next(err);
+    }
+}
+
+// Upadte User details
+const adminUpdateUser = async (req,res,next)=>{
+    try{
+        const {mail} = req.body;        
+        if (!mail) 
+        return sendError(
+            res,
+            STATUS_CODES.BAD_REQUEST,
+            MESSAGES.AUTH.MISSING_VALUES,
+        );
+
+        const user = await UserModel.findByIdAndUpdate(
+            req.params.id,
+            {
+                userEmail:mail
+            },
+        {
+           new:true,
+           runValidators:true, 
+        });
+        if(!user)
+            return sendError(res, STATUS_CODES.NOT_FOUND, MESSAGES.USER.NOT_FOUND)
+            return sendSuccess(res,
+                           STATUS_CODES.OK,
+                           MESSAGES.USER.UPDATED,
+                           sanitizeUser(user),
+                        );        
+    }catch(err){
+        next(err);
+    }
+}
+
+module.exports = {adminDefault ,
+                  adminHome ,
+                   adminAbout,
+                    adminGetUser,
+                     adminAddUser,
+                      adminShowUsers,
+                       sanitizeUser,
+                        adminFindUser,
+                         adminDeleteUser,
+                          adminUpdateUser}
