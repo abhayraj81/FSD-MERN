@@ -350,8 +350,8 @@ npm run lint      # run ESLint
 - [x] DOM manipulation & Fetch API
 - [x] MongoDB basics — queries, CRUD, aggregation
 - [x] React.js — components, hooks, routing, Context API
-- [ ] Express.js — REST routes, middleware, controllers
-- [ ] MongoDB ↔ Express integration (Mongoose models & API endpoints)
+- [x] Express.js — REST routes, middleware, controllers
+- [x] MongoDB ↔ Express integration (Mongoose models & API endpoints)
 - [ ] Full MERN-stack capstone project
 
 <br>
