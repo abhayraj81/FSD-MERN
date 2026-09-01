@@ -1,4 +1,5 @@
 require("dotenv").config();
+const cors = require('cors');
 const express = require('express')
 const db = require("./db_conn");
 const app = express()
@@ -6,7 +7,11 @@ const app = express()
 const HOST = process.env.HOST;
 const PORT = process.env.PORT || 8000;
 
-
+app.use(cors({
+    origin:'http://localhost:5173',
+    credentials : true
+}),
+);
 
 app.use(express.json())
 
@@ -32,6 +37,7 @@ const middleware2 = (req,res, next)=>{
     next();
 }
 app.use(middleware2);
+
 
 const bcrypt = require('bcrypt')
 // Login

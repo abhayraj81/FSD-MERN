@@ -36,4 +36,9 @@ router.delete("/user/:id",adminDeleteUser)
 //localhost:8081/admin/user/1 (Method = DELETE)
 router.put("/user/:id",adminUpdateUser)
 
+const uploadProfilePic = require('../middlewares/uploadProfilePic')
+// profilepicCtrl - name of file control in frontend form
+router.post("/profileUpload", uploadProfilePic,uploadProfilePic.single('profilePicCtrl'))
+
+
 module.exports = router;
