@@ -1,3 +1,7 @@
+const { sendError, sendSuccess } = require("../utils/responseHelper");
+const STATUS_CODES = require("../constants/statusCodes");
+const MESSAGES = require("../constants/messages");
+
 const adminDefault = (req,res)=>{
     res.send("<h1 align= 'center'> Admin Default Page </h1>");
 };
@@ -19,11 +23,6 @@ const adminGetUser = (req,res)=>{
 };
 
 const UserModel = require("../models/userModel");
-
-const { sendError, sendSuccess } = require("../utils/responseHelper");
-const STATUS_CODES = require("../constants/statusCodes");
-const MESSAGES = require("../constants/messages");
-
 const bcrypt = require('bcrypt')
 
 const sanitizeUser = (user)=>{    
@@ -62,7 +61,7 @@ catch (err){
     next(err);
 }
     // res.status(200).json(newUser);
-}
+};
 
 const adminShowUsers = async (req, res, next)=>{
     try{
