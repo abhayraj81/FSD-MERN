@@ -1,6 +1,6 @@
 const MESSAGES = {
   AUTH: {
-    MISSING_VALUES: "UserID(EMail) and Password are Required",
+    MISSING_VALUES: "Values are Required",
     INVALID_CREDENTIALS: "Ivalid UserID(EMail) and Password",
     LOGIN_SUCCESS: "Login Successful",
     LOG_OUT: "Logout Successful",
@@ -17,6 +17,7 @@ const MESSAGES = {
     INTERNAL_ERROR: "Something went wrong, please try again later",
     GENERAL: "Success",
     ERROR: "Error",
+    UPLOAD_ERROR: "File not Present",
   },
 };
 

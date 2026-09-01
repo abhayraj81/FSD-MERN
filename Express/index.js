@@ -15,12 +15,14 @@ app.use(cors({
 
 app.use(express.json())
 
-// hide password
+// sanitize user ( hide password )
 const sanitizeUser = (user)=>{    
     user = user.toObject ? user.toObject(): {...user}
     delete user["userPwd"];
     return user
 }
+
+// Application Level Middleware
 
 //--------------------Middleware 1 -------------
 const middleware1 = (req,res, next)=>{
