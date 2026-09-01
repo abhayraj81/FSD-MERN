@@ -23,13 +23,14 @@ import Comp17 from './myComp17-form-halder'
 import Comp18 from './myComp18-useEffect'
 import Comp19 from './myComp19-props-drilling'
 import Comp20 from './myComp20-context'
+import ShowUsers from './showUsers'
 //import './App.css'
 
 function App() {  const [count, setCount] = useState(0)
 
   return (
     <>
-    <Comp1/>      
+    <ShowUsers/>    
     
     
       {/* <section id="center">
